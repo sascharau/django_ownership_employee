@@ -1,0 +1,14 @@
+{% extends 'box.html' %}
+{% load i18n static bootstrap %}
+{% block page_title %}{{ title }}{% endblock %}
+
+{% block main %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        {% if form2 %}
+            {{ form2|bootstrap }}
+        {% endif %}
+        <button class="btn btn-primary" type="submit">{% trans 'Submit' %}</button>
+    </form>
+{% endblock %}

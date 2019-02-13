@@ -1,0 +1,27 @@
+{% extends 'members/base-log-out.html' %}
+{% load i18n bootstrap %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    <form class="login m-t" method="POST">
+        {% csrf_token %}
+        {{ form|bootstrap_inline }}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button type="submit" class="btn btn-primary full-width">{% trans "Submit" %}</button>
+    </form>
+    {% if form.username and not form.password2 %}
+    <a class="econdaryAction" href="{% url 'password_reset' %}">
+        <small>{% trans "Forgot Password?" %}</small>
+    </a>
+        <small>or</small>
+    <a class="econdaryAction" href="{% url 'signup' %}">
+        <small>{% trans "Signup" %}</small>
+    </a>
+    {% else %}
+     <a class="econdaryAction" href="{% url 'login' %}">
+        <small>{% trans "Regular Login?" %}</small>
+    </a>
+    {% endif %}
+{% endblock %}

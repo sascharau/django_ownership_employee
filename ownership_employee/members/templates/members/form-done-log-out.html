@@ -1,0 +1,7 @@
+{% extends 'members/base-log-out.html' %}
+{% block page_title %}{{ title }}{% endblock %}
+{% block content %}
+    <h3>{{ title }}</h3>
+    <p>{{ content }}</p>
+    <p>{{ extra_content|safe }}</p>
+{% endblock %}
