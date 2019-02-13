@@ -1,0 +1,8 @@
+{% load i18n %}
+{% autoescape off %}
+{% trans 'Hello' %} {{ user.username }},
+
+{{ content }}
+
+{{ protocol }}{{ domain }}{% url 'api_signup_activate' uidb64=uid token=token %}
+{% endautoescape %}

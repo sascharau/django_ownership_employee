@@ -1,0 +1,52 @@
+/* MEMBERS LOGGED-OUT */
+.middle-box {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.loginscreen.middle-box {
+    width: 300px;
+}
+
+.wrapper .middle-box {
+    margin-top: 140px;
+}
+
+.form-control,
+.btn {
+    border-radius: 0rem;
+}
+
+.btn-primary {
+    background-color: #0077c2;
+    border-color: #0077c2;
+    color: #FFFFFF;
+    -webkit-appearance: none;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.btn-primary.active:focus {
+  background-color: #42a5f4;
+  border-color: #42a5f4;
+  color: #FFFFFF;
+}
+
+.help-block {
+    font-size: small;
+    color: #666666;
+}
+.help-block > ul {
+    list-style: none;
+    padding-left: 0;
+}
+.help-block .has-error {
+    color: red;
+}

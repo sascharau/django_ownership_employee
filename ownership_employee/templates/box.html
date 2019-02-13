@@ -1,0 +1,17 @@
+{% extends "private.html" %}
+{% block content %}
+    <div class="box-frame">
+        <div class="box-title">
+            <h3>{% block page_title %}{% endblock %}</h3>
+            <div class="box-tools">
+                {% block box_options %}{% endblock %}
+                <a class="close-link"><i class="fa fa-home"></i></a>
+            </div>
+        </div>
+        {% block create %}{% endblock %}
+        <div class="box-content">
+            {% block main %}{% endblock %}
+            {% include 'appendix/base.html' %}
+        </div>
+    </div>
+{% endblock %}

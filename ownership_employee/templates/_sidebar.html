@@ -1,0 +1,79 @@
+{% load i18n thumbnail %}
+<aside class="app-side">
+    {# begin .side-heading #}
+    <header class="side-heading text-center heading-mini">
+        <div class="row">
+            <div class="col-12">
+                <div class="mx-auto nc">
+                    <a class="box-icon-title" href="#" id="profile" data-toggle="dropdown">
+                        <div class="user client-icon client-icon-mini">
+                            {% if request.user.profile.avatar %}
+                                <span>
+                                    <img alt="image" class="img-circle"
+                                         src="{% thumbnail request.user.profile.avatar 70x70 crop="0.5" %}">
+                                </span>
+                            {% else %}
+                                <p class="client-icon-text">
+                                    {{ request.user.username|make_list|first }}
+                                </p>
+                            {% endif %}
+                        </div>
+                        <div class="mt-2 username hidden">
+                            {% if request.user.get_full_name %}
+                                {{ request.user.get_full_name }}
+                            {% else %}
+                                {{ request.user.username }}
+                            {% endif %}
+                        </div>
+                    </a>
+                    <div class="">
+                        <div class="dropdown-menu" aria-labelledby="profile">
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item"
+                               href="{% url 'password_change' %}">{% trans 'Password change' %}</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    {# END: .side-heading #}
+    {# begin .side-content #}
+    <div class="side-content">
+        {# begin .side-nav #}
+        <nav class="side-nav side-nav-mini">
+            {# BEGIN: nav-content #}
+            <ul class="nav">
+                <li>
+                    <a href="{% url 'dashboard' %}">
+                    <span class="nav-icon">
+                      <i class="fa fa-fw fa-cogs"></i>
+                    </span>
+                        <span class="nav-title hidden">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'members_list' %}">
+                    <span class="nav-icon">
+                      <i class="fa fa-fw fa-users"></i>
+                    </span>
+                        <span class="nav-title hidden">Members</span>
+                    </a>
+                </li>
+            </ul>
+            {# END: nav-content #}
+        </nav>
+        {# END: .side-nav #}
+    </div>
+    {# END: .side-content #}
+
+    {# begin .side-footer #}
+    <footer class="side-footer">
+        <a class="visible-xs b-r" href="#" data-side=collapse>
+            <i class="fa fa-fw fa-2x fa-inverse fa-bars"></i>
+        </a>
+    </footer>
+    {# END: .side-footer #}
+</aside>

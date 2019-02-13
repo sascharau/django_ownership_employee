@@ -1,0 +1,7 @@
+Django>=2.1
+django-debug-toolbar
+djangorestframework>=3.7.3
+djangorestframework-simplejwt>=3.3
+easy-thumbnails>=2.5
+Pillow>=4.3.0
+django-cors-headers

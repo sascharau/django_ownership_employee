@@ -1,0 +1,14 @@
+{% if messages %}
+    <script>
+        {% for message in messages %}
+            toastr.{{ message.tags }}('{{ message }}'),
+        {% endfor %}
+        toastr.options = {
+
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5500
+        };
+    </script>
+{% endif %}

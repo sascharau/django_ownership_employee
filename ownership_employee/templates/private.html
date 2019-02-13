@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block extra_css %}
+    <link href="{% static 'css/layout.css' %}" rel="stylesheet">
+    <link href="{% static 'css/private.css' %}" rel="stylesheet">
+    <link href="{% static 'css/icon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sidebar.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block base %}
+    <div class="app">
+        <div class="app-wrap">
+            <div class="app-container">
+                {% if user.is_authenticated %}
+                    {% include '_sidebar.html' %}
+                    <div class="app-main">
+                        {% include '_topnav.html' %}
+                        <div class="main-content">
+                            <div class="container-fluid">
+                                {% block content %}{% endblock content %}
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="float-right">DEMO | {% now "d M Y" %}</div>
+                        </div>
+                    </div>
+                {% else %}
+                <div class="alert alert-error" role="alert">
+                    <p>{% trans 'registert user only!' %}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock base %}
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/page.js' %}"></script>
+{% endblock %}
