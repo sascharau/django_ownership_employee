@@ -138,11 +138,6 @@ class UserCreateForm(BaseUserForm):
                 gender=self.cleaned_data["gender"],
             )
             if self.cleaned_data["avatar"]:
-                # create the Image object
-                avatar = File.objects.create(
-                    file=self.cleaned_data["avatar"],
-                )
-                profile.avatar = avatar
                 profile.save()
         return self.creator
 

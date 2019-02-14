@@ -5,14 +5,12 @@ from django.contrib.auth import authenticate
 from django.utils.translation import ugettext as _
 
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenObtainSerializer
+from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from common.models import User
 
 from ..models import UserProfile, GENDER_CHOICES
-from contacts.serializers import ContactMembersSerializer
-from appendix.serializers import FileSerialiter
 
 
 class ValidateUser(serializers.Serializer):
@@ -211,9 +209,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer, ValidateUser):
     gender = serializers.ChoiceField(choices=GENDER_CHOICES)
     detail_url = serializers.HyperlinkedIdentityField(view_name='userprofile-detail')
     password = serializers.CharField(source='user.password', write_only=True, style={'input_type': 'password'})
-    avatar = FileSerialiter()
-    contact = ContactMembersSerializer()
-    # appendix = AppendixSerializer()
 
     class Meta:
         model = UserProfile
