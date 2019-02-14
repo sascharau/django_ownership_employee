@@ -1,14 +1,11 @@
-from typing import Union
 from rest_framework import permissions
 from .utils import valid_owner
 from rest_framework.request import Request
-from members.api.views import ActivateUser, PasswordResetConfirmView, RegisterView, ResetPasswordView
 
 
 class IsAnonymous(permissions.BasePermission):
 
-    def has_permission(self, request: Request,
-                       view: Union[RegisterView, ResetPasswordView, ActivateUser, PasswordResetConfirmView]) -> bool:
+    def has_permission(self, request: Request, view) -> bool:
         user = request.user
         return user.is_anonymous
 
@@ -20,7 +17,7 @@ class FlamingoPermission(permissions.DjangoModelPermissions):
             return valid_owner(obj, request.user)
 
     def get_view_perm(self, method, model_cls):
-        # todo check ob mann das noch braucht ab Django 2.1
+        # todo check if you still need it in Django 2.1
         if method == 'GET':
             for perm, description in model_cls._meta.permissions:
                 if perm[:4] == 'view':

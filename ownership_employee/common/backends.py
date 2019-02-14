@@ -29,7 +29,7 @@ permissions_choices = get_permissions_list()
 
 class UserPermissions:
 
-    def get_user_permissions(self, user: User) -> Set[str]:
+    def get_user_permissions(self, user: User, obj: None = None) -> Set[str]:
         # get permissions from OwnerGroup
         user_permission = Permission.objects.filter(ownergroup__userprofile=user.profile)\
             .values_list('content_type__app_label', 'codename')

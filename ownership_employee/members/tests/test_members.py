@@ -1,7 +1,5 @@
 from django.urls import reverse
 from django.core import mail
-from django.utils.encoding import force_text
-from django.utils.http import urlsafe_base64_decode
 
 from common.models import User
 from common.utils import create_uid, get_uid_object
@@ -185,7 +183,6 @@ class MembersTestView(MembersTestCase):
             first_name='Hans',
             profile__gender=2,
             profile__owner=self.owner_one,
-            profile__avatar_id=1
         )
         self.assertTrue(new_user.email, 'new_user_for_owner_one@test.io')
 
