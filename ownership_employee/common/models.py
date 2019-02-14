@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from common.dirtyfields.dirtyfields import DirtyFieldsMixin
 from common.utils import get_current_user, create_uid
 
 
@@ -23,7 +22,7 @@ class CommonManager(models.Manager):
             return None
 
 
-class CommonModel(DirtyFieldsMixin, models.Model):
+class CommonModel(models.Model):
 
     ENABLE_M2M_CHECK = True
 
