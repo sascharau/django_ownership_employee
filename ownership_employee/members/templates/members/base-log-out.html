@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n static %}
-{% block extra_css %}
-    <link href="{% static 'css/members-out.css' %}" rel="stylesheet">{% endblock %}
+{% block css %}{{ block.super }}<link href="{% static 'css/members-out.css' %}" rel="stylesheet">{% endblock %}
 
 {% block bodyclass %}class="gray-bg"{% endblock %}
 {% block base %}
