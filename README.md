@@ -38,4 +38,4 @@ DJANGO_SETTINGS_MODULE=conf.settings
 ~~~~
 ./manage.py user_generator
 ~~~~
-Owner login: john.doe@example.app and try3000
+Owner login: `john.doe@example.app` and `try3000`

@@ -4,12 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>{% block page_title %}{% endblock %}
-        {% if request.user.first_name %}{{ request.user.first_name }} {{ request.user.last_name }}{% else %}
+        {% if request.user.first_name %}{{ request.user.first_name }}{{ request.user.last_name }}{% else %}
             {{ request.user.username }}{% endif %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    {% block css %}{% endblock %}
+    {% block css %}{{% endblock %}
 </head>
 <body class="app-side-mini app-side-opened">
     {% block base %}{% endblock base %}
