@@ -10,7 +10,6 @@
             {{ request.user.username }}{% endif %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {% block css %}{% endblock %}
-    {% block extra_css %}{% endblock %}
 </head>
 <body class="app-side-mini app-side-opened">
     {% block base %}{% endblock base %}
@@ -19,7 +18,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     {% block js %}{% endblock js %}
-    {% block extra_js %}{% endblock %}
     {% include '_messages.html' %}
 </body>
 </html>

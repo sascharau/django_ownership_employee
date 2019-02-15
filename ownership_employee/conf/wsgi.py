@@ -8,8 +8,9 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
 import os
-import env
-env.read_dotenv()
+from env import read_dotenv
+
+read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")
