@@ -146,11 +146,3 @@ def members_list_ajax(request):
             ]
             all_item_list.append(list)
         return HttpResponse(json.dumps({'data': all_item_list}))
-
-#
-# def invitations(request):
-#     if request.method == 'POST':
-#         user_list = request.
-# check liste , ; ' '
-# for x in y:
-# atomic -> user_crate; profile_crate ;send password vergessen email

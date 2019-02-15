@@ -21,7 +21,7 @@ class Command(BaseCommand):
         ).delete()
 
         # delete avatar files
-        path = (MEDIA_ROOT + '/flamingo')
+        path = (MEDIA_ROOT + '/privat')
         shutil.rmtree(path)
         os.mkdir(path)
 
@@ -84,7 +84,7 @@ class Command(BaseCommand):
                 name = '%s%s%s' % (first_name, last_name, username_count *1000 )
 
             member = User.objects.create_user(
-                username=name.lower(),
+                username=name.lower() + '@example.app',
                 first_name=first_name,
                 last_name=last_name,
                 email=name.lower() + '@example.app'
