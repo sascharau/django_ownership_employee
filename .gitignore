@@ -1,0 +1,7 @@
+venv/
+log/
+**/default.sqlite3
+**/.env
+.idea
+__pycache__
+**/media/
